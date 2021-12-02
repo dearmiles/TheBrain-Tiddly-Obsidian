@@ -3,12 +3,12 @@ Convert TheBrain database and notes to Tiddly json and Obsidian md, while keepin
 
 
 ### Dependencies:
-  Python3</br>
-  sqlite3 for windows</br>
+  - Python3</br>
+  - sqlite3 for windows</br>
     https://sqlite.org</br>
-  TheBrain (PersonalBrain) 9/10/11</br>
+  - TheBrain (PersonalBrain) 9/10/11</br>
     www.thebrain.com</br>
-  Tiddly</br>
+  - Tiddly</br>
     https://github.com/Jermolene/TiddlyDesktop</br>
 
 ### Basic Processing Flow:

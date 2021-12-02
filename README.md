@@ -1,5 +1,5 @@
 # TheBrain2TiddlyNObsidian
-Convert TheBrain database and notes to Tiddly json and Obsidian md, keeping almost all the links.
+Convert TheBrain database and notes to Tiddly json and Obsidian md, while keeping almost all the links.
 
 
 ### Dependencies:
@@ -16,6 +16,10 @@ Convert TheBrain database and notes to Tiddly json and Obsidian md, keeping almo
 
 ### Usage
 *adjust python scripts first, such as filenames and paths*
+
 echo sql.sql | sqlite3.exe
+
 python3 thoughts2json.py
+
 python3 json2Obsidian.py
+

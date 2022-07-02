@@ -1,14 +1,16 @@
 import codecs
 import json
 import markdownify
+import os
 
-strSourcePath = 'd:\\工作\\b2t\\'
-strMDPath = 'd:\\工作\\b2t\\markdown\\'
+
+strSourcePath = '.\\'
+strMDPath = '.\\markdown\\'
 
 
 def readjson(strFileName):
     try:
-        jsonfin = codecs.open('d:\\工作\\b2t\\thoughts.json', 'r', 'utf-8')
+        jsonfin = codecs.open(strSourcePath+'thoughts.json', 'r', 'utf-8')
         objthoughts = json.load(jsonfin)
     except Exception as e:
         print(e)
@@ -82,6 +84,9 @@ def insertlink(strFileName, listLinks):
 strFileName = strSourcePath + 'thoughts.json'
 if __name__ == "__main__":
 
+    os.makedirs(strMDPath, 777, True)
+    
+
     jsonThought = readjson(strFileName)
     dictTupleFileContents, dictJsonLinks = scanjson(jsonThought)
 
@@ -99,7 +104,11 @@ if __name__ == "__main__":
         if  dict(dictJsonLinks).__contains__(strID):
             listLinkIDs = dict(dictJsonLinks)[strID]
             for strLinkID in listLinkIDs:
-                strLink = dict(dictTupleFileContents)[strLinkID][0]
+                try:
+                    strLink = dict(dictTupleFileContents)[strLinkID][0]
+                except Exception as err:
+                    print(str(err) + strFileName + " to " + strLinkID)
+                    
                 listLinks.append(strLink)
 
         

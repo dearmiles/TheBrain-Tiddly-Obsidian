@@ -7,15 +7,16 @@ I uploaded all of these here, with a brief description.
 
 ### Dependencies:
   - Python3</br>
-  - sqlite3 for windows</br>
+  - sqlite3 for windows
     https://sqlite.org</br>
-  - TheBrain (PersonalBrain) 9/10/11</br>
+  - TheBrain (PersonalBrain) 9/10/11
     http://www.thebrain.com</br>
-  - Tiddly</br>
+  - Tiddly
     https://github.com/Jermolene/TiddlyDesktop</br>
   - Obsidian
-    https://obsidian.md/
-
+    https://obsidian.md/</br>
+  - Markdownify
+  [markdownify · PyPI](https://pypi.org/project/markdownify/)</br>
 ### Basic Processing Flow:
   TheBrain (Brain.db, notes.html(s)) --> CSV (Thoughts.csv, Links.csv) --> TiddlyDesktop (Thoughts.json) --> Obsidian (md(s))
 

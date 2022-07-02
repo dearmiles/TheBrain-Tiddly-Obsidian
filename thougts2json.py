@@ -8,17 +8,20 @@ import collections
 AllThoughtLinks = collections.defaultdict(collections.defaultdict)
 
 kk={1,2}
-
+NoteFilePath = '.\\'
 
 def getThoughtNote(thoughtid):
     Notetext=""
     
     try:
-        NoteFilePath = 'C:\\Users\\Miles\\Brains\\U01\\B01\\'
-        NoteFilePath = NoteFilePath+thoughtid+"\\Notes\\notes.html"
+        
+        NoteFilePath = globals()['NoteFilePath']+thoughtid+"\\Notes\\notes.html"
         NoteFile = codecs.open(NoteFilePath, encoding="utf-8")
         Notetext=NoteFile.read()
-    except:
+    except Exception as e:
+        #print(NoteFilePath)
+        print(e)
+        
         pass
 
     return Notetext
@@ -65,9 +68,9 @@ def tcsv2tuple(filepath):
 
     return thoughttyddlers
 
-if __name__ == "__main__"
-    fullpath = 'D:\\Applications\\sqlite-tools-win32-x86-3320200\\thoughts.csv'
-    linksfilepath = 'D:\\Applications\\sqlite-tools-win32-x86-3320200\\links.csv'
+if __name__ == "__main__":
+    fullpath = '.\\thoughts.txt'
+    linksfilepath = '.\\links.txt'
     getAllLinks()
     tiddlers = tcsv2tuple(fullpath)
     jsonfile = codecs.open("thoughts.json", mode="w", encoding='utf-8')
